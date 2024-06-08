@@ -1,0 +1,14 @@
+{% extends 'toolbox_workshop/base_dashboard.html' %}
+{% load static %}
+{% block content %}
+	<div class='p-10'>
+		<!-- Upcoming Client Appointment Widget -->
+		<div class='bg-gray-100 w-1/2 p-10 max-h-96 rounded shadow-lg'>
+			<h3 class='font-bold mb-6'>Upcoming Client Appointments</h3>
+			{% if appointments %}
+			{% else %}
+				<p class='my-2'>No upcoming appointments. You're all caught up!</p>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

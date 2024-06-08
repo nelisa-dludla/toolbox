@@ -7,6 +7,7 @@ module.exports = {
     extend: {
 		colors: {
 			'toolbox-green': '#255957',
+			'toolbox-hover-green': '#428684',
 		},
 	},
   },

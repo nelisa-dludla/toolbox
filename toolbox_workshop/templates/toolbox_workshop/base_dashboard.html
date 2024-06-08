@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% if title %}
+		<title>ToolBox - {{ title }}</title>
+		{% else %}
+			<title>ToolBox</title>
+		{% endif %}
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="{% static 'src/styles.css' %}" rel="stylesheet">
+	</head>
+	<body class='flex'>
+		<!-- LHS Panel -->
+		<div class='bg-toolbox-green h-screen w-96 text-white'>
+			<!-- Logo -->
+			<h1 class='font-bold px-8 pt-8 text-2xl'>ToolBox</h1>
+			<!-- Dashboard Views -->
+			<ul class='p-8 flex flex-col'>
+				<!-- Top -->
+				<div>
+					<!-- Dashboard Link -->
+					{% if "Dashboard" in title %}
+						<a href="{% url 'toolbox_dashboard_main' %}"><li class='p-4 my-2 bg-toolbox-hover-green rounded-full w-5/6'>Dashboard</li></a>
+					{% else %}
+						<a href="{% url 'toolbox_dashboard_main' %}"><li class='p-4 my-2 hover:bg-toolbox-hover-green hover:rounded-full hover:w-5/6'>Dashboard</li></a>
+					{% endif %}
+					<!-- Inventory Link -->
+					{% if "Inventory" in title %}
+						<a href="{% url 'toolbox_dashboard_inventory' %}"><li class='p-4 my-2 bg-toolbox-hover-green rounded-full w-5/6'>Inventory Management</li></a>
+					{% else %}
+						<a href="{% url 'toolbox_dashboard_inventory' %}"><li class='p-4 my-2 hover:bg-toolbox-hover-green hover:rounded-full hover:w-5/6'>Inventory Management</li></a>
+					{% endif %}
+					<!-- CLients Link -->
+					{% if "Clients" in title %}
+						<a href="{% url 'toolbox_dashboard_clients' %}"><li class='p-4 my-2 bg-toolbox-hover-green rounded-full w-5/6'>Clients</li></a>
+					{% else %}
+						<a href="{% url 'toolbox_dashboard_clients' %}"><li class='p-4 my-2 hover:bg-toolbox-hover-green hover:rounded-full hover:w-5/6'>Clients</li></a>
+					{% endif %}
+					<!-- Service Link -->
+					{% if "Service" in title %}
+						<a href="{% url 'toolbox_dashboard_service' %}"><li class='p-4 my-2 bg-toolbox-hover-green rounded-full w-5/6'>Service Records</li></a>
+					{% else %}
+						<a href="{% url 'toolbox_dashboard_service' %}"><li class='p-4 my-2 hover:bg-toolbox-hover-green hover:rounded-full hover:w-5/6'>Service Records</li></a>
+					{% endif %}
+					<!-- Communication Link -->
+					{% if "Communication" in title %}
+						<a href="{% url 'toolbox_dashboard_communication' %}"><li class='p-4 my-2 bg-toolbox-hover-green rounded-full w-5/6'>Communication</li></a>
+					{% else %}
+						<a href="{% url 'toolbox_dashboard_communication' %}"><li class='p-4 my-2 hover:bg-toolbox-hover-green hover:rounded-full hover:w-5/6'>Communication</li></a>
+					{% endif %}
+				</div>
+				<!-- Bottom -->
+				<div>
+					<!-- Profile Link -->
+					{% if "Profile" in title %}
+						<a href="{% url 'toolbox_dashboard_profile' %}"><li class='p-4 my-2 bg-toolbox-hover-green rounded-full w-5/6'>Profile</li></a>
+					{% else %}
+						<a href="{% url 'toolbox_dashboard_profile' %}"><li class='p-4 my-2 hover:bg-toolbox-hover-green hover:rounded-full hover:w-5/6'>Profile</li></a>
+					{% endif %}
+					<!-- Settings Link -->
+					<li class='p-4 my-2 hover:bg-toolbox-hover-green hover:rounded-full hover:w-5/6'>Settings</li>
+					<li class='p-4 my-2 hover:bg-toolbox-hover-green hover:rounded-full hover:w-5/6'>Log Out</li>
+				</div>
+			</ul>
+		</div>
+		<!-- RHS Content View -->
+		<div class='grow'>
+			{% block content %}{% endblock %}
+		</div>
+	</body>
+</html>

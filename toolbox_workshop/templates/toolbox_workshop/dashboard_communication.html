@@ -1,0 +1,23 @@
+{% extends 'toolbox_workshop/dashboard_main.html' %}
+{% load static %}
+{% block content %}
+	<div class='p-10'>
+		<h3 class='font-bold mb-6 text-2xl'>Send Communication</h3>
+		<form class='flex flex-col' action="">
+			<!-- Communication Type -->
+			<select class='p-4 my-2 w-1/2 bg-gray-100 rounded' name="communication_type" id="communication_type">
+				<option value="">--- Select Communication Type ---</option>
+				<option value="email">Email</option>
+				<option value="sms">SMS</option>
+			</select>
+			<!-- Client Name -->
+			<input class='p-4 my-2 w-1/2 bg-gray-100 rounded' type="text" name="name" id="name" placeholder='Client Name'>
+			<!-- Subject -->
+			<input class='p-4 my-2 w-1/2 bg-gray-100 rounded' type="text" name="subject" id="subject" placeholder='Subject'>
+			<!-- Message -->
+			<textarea class='p-4 my-2 w-1/2 bg-gray-100 rounded' name="Message" id="Message" rows="10" placeholder='Message'></textarea>
+			<!-- Send -->
+			<button class='bg-toolbox-green text-white font-bold p-4 w-40 mt-10 rounded-full shadow-lg hover:bg-toolbox-hover-green hover:scale-105'>Send</button>
+		</form>
+	</div>
+{% endblock %}

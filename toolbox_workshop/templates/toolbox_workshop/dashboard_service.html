@@ -1,0 +1,15 @@
+{% extends 'toolbox_workshop/dashboard_main.html' %}
+{% load static %}
+{% block content %}
+	<!-- Service Widget -->
+	<div class='p-10'>
+		<div class='bg-gray-100 w-1/2 p-10 max-h-96 rounded shadow-lg'>
+			<h3 class='font-bold mb-6'>Records</h3>
+			{% if records %}
+			{% else %}
+				<p class='my-2'>No service records found. Log your first service!</p>
+			{% endif %}
+		</div>
+		<button class='bg-toolbox-green text-white font-bold p-4 w-40 mt-10 rounded-full shadow-lg hover:bg-toolbox-hover-green hover:scale-105'>Add Record</button>
+	</div>
+{% endblock %}
