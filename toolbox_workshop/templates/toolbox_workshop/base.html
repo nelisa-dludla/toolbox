@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class='scroll-smooth'>
+	<head>
+		{% if title %}
+		<title>ToolBox - {{ title }}</title>
+		{% else %}
+			<title>ToolBox</title>
+		{% endif %}
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="{% static 'src/styles.css' %}" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<nav class='flex justify-between h-20 p-6 bg-toolbox-green fixed top-0 w-full'>
+				<!-- Logo -->
+				<div id='nav_lhs' class='text-white font-bold text-xl my-auto'>
+					<h1 class='align-middle'>ToolBox</h1>
+				</div>
+				<!-- Options -->
+				<div id='nav_rhs' class='text-white my-auto'>
+					<ul class='flex flex-row'>
+						<li class='font-semibold mr-5 hover:underline hover: underline-offset-8 hover:decoration-2'><a href="#home">Home</a></li>
+						<li class='font-semibold mr-5 hover:underline hover: underline-offset-8 hover:decoration-2'><a href="#about">About</a></li>
+						<li class='font-semibold mr-5 hover:underline hover: underline-offset-8 hover:decoration-2'><a href="#features">Features</a></li>
+						<li class='font-semibold mr-5 hover:underline hover: underline-offset-8 hover:decoration-2'>Log In</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		{% block content %}{% endblock %}
+	</body>
+</html>
